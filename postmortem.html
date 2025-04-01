@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="Style.css">
+  <title>Course Library - Home</title>
+</head>
+<header style="background-color: #272727">
+  <nav>
+    <div class="navbar">
+      <div class="logo"><a href="index.html">Study Buddy</a></div>
+      <ul class="menu">
+        <li><a href="about.html">About</a></li>
+        <li><a href="ostmortem.html">Postmortem</a></li>
+        <li><a href="demo.html">Demo</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<body style = "background-color: black">
+<div class="content-wrapper">
+  <div class="text-section">
+    <p class="attention-grabber">Postmortem</p>
+    <p class="blurb postmortem-box">
+      Our project followed the architecture of the sample project closely. Initially we had disagreements on if this is
+      how we should approach the project. Our project started with logic layer functions being static, and called from
+      the class itself, rather than an instance of the class. We decided for iteration 1 that since this functioned for
+      all of our current features, we would keep it as is and not follow the sample project. However, for iteration 2,
+      we had to implement testing with dependency injection, and static methods would not allow the persistence layer
+      to be swapped from our stubs to the HSQLDB database. If we were to start the project over, we would have the
+      knowledge that this would be an issue, and we would’ve avoided the technical debt from these static methods
+      that needed to be solved in iteration 2.<br><br>
+
+      The Database in iteration 2 had its own problems we had to solve. Initially, the flashcardID was set as a static
+      class variable that was initialized to 0 on startup. Since our app did not have persistence over restarts, this
+      was not an issue. However, when we were implementing the HSQLDB, we realized that each time the app was started,
+      the cardID would be reset to 0, even if a card existed with ID 0. This meant for the database to function
+      properly with unique card id’s, the ID had to be set by the database, which we achieved by using
+      RETURN_GENERATED_KEYS to retrieve the auto generated keys from it. This issue took a large amount of effort to
+      resolve, but luckily, we were able to get it done in time for iteration 2.<br><br>
+
+      Iteration 3 went much more smoothly. System tests were fairly straightforward to implement, however we had a few
+      issues with consistency where the test would fail to swipe back a page. This issue was solved fairly easily by
+      ensuring the android keyboard is closed after entering text. By this point our architecture had been improved
+      greatly from our first iteration. The extendibility of our architecture was good since we had good separation of
+      layers, and most new features added required minimal changes to the code. When we added features in iteration
+      1 and 2, each feature created new bugs since the architectural layers were not isolated as well. For feature 3,
+      we did not have to fix any bugs with the implementation of our new features, since the new features did not have
+      to modify existing code. This showed us that our code was now open for extension, but closed for modification,
+      meaning we followed the open-closed principle of software design well.<br><br>
+
+      The project changed from the initial iteration as we did not have time to implement all of our original features
+      we had planned. We were ambitious in our plans and came up with features that we thought we could implement, but
+      as we progressed, we realized that some features would have to be left out. An example of this feature was
+      creating calendar that tracks upcoming exams and quizzes. This feature would have required us to implement an
+      entire calendar to our app, which would only be used for this one feature. We also had an idea to generate
+      flashcards with AI tools, but since our app was designed to be self contained, we decided we did not want to use
+      external dependencies that require internet connection, which would increase complexity of our app greatly.
+      A feature we would have liked to implement but ran out of time for is tracking user scores on a public
+      leaderboard. This would allow users of our app to compare themselves to each other, which would provide
+      motivation to keep studying harder.<br><br>
+
+      During the course of this project, we learned that team development can sometimes be more challenging than
+      individual development. Communication between group members is essential for progress to be made, as each member
+      of the team needs to know what they’re responsible for. We had issues with distribution of work in the project as
+      we had no group leader to coordinate. For iteration 1 we had a group meeting where we decided what each person
+      would do and decided on all our features. However, after iteration 1, we decided that we would distribute work
+      in a proactive way, where each member assigned themselves to features, they would implement for the iteration
+      . This worked for completing the required number of features, but motivation of members was inconsistent at
+      times, so we had to push each other to meet the deadlines. There was also moments when a group member would get
+      stuck on something and ask for assistance. This is where we saw the benefits of working with a group.
+      For example, a member was implementing HSQLDB to our project, and the database would not launch.
+      The issue was sent to the group, where another group member was able to solve the issue.
+      Without help from this group member, the person who ran into the issue would not have been able to solve the
+      problem by the iteration due date.<br><br>
+
+      The project was in large a success, but not without its challenges. Working in a group has taught us that
+      individual initiative is an important part of the success of the group as a whole. Each iteration may not have
+      equal distribution of work, but as long as each member is contributing, the group as a whole can succeed.
+    </p>
+  </div>
+</div>
+</body>

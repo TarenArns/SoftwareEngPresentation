@@ -1,0 +1,136 @@
+nav{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 75px;
+    background: #522546;
+    z-index: 100;
+}
+
+body{
+    height: 100vh;
+}
+nav .navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    max-width: 90%;
+    background: #522546;
+    margin: auto;
+}
+nav .navbar .logo a{
+    color: white;
+    font-size: 27px;
+    font-weight: 600;
+    text-decoration: none;
+}
+nav .navbar .logo a:hover{
+    color: grey;
+}
+nav .navbar .menu{
+    font-size: 20px;
+    color: white;
+    display: flex;
+}
+.navbar .menu li{
+    list-style: none;
+    margin: 0 20px;
+}
+.navbar .menu li a{
+    color: white;
+    font-size: 17px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.navbar .menu li a:hover{
+    color: gray;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    padding: 5%;
+    box-sizing: border-box;
+    color: white;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.text-section {
+    flex: 1;
+    min-width: 300px;
+}
+
+.attention-grabber {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.blurb {
+    font-size: 20px;
+    max-width: 800px;
+    padding-left: 10px;
+}
+
+.screenshot {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+}
+
+.side-image {
+    max-width: 65%;
+    height: auto;
+    border-radius: 10px;
+}
+
+
+.grid-container {
+    position: fixed;
+    margin-top: 150px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding: 5%;
+    color: white;
+    box-sizing: border-box;
+}
+
+.grid-item {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(255,255,255,0.05);
+}
+
+.grid-item-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.grid-item-paragraph {
+    font-size: 16px;
+    color: #cccccc;
+}
+.postmortem-box {
+    border-left: 4px solid #88304E;
+    padding-left: 20px;
+    background-color: #1e1e1e;
+    max-width: 1200px;
+}
+.side-video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+
