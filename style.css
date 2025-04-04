@@ -94,14 +94,16 @@ nav .navbar .menu{
 
 
 .grid-container {
-    position: fixed;
-    margin-top: 150px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
     gap: 40px;
     padding: 5%;
     color: white;
     box-sizing: border-box;
+    max-width: 150%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .grid-item {
@@ -131,6 +133,14 @@ nav .navbar .menu{
     max-width: 100%;
     height: auto;
     border-radius: 10px;
+}
+
+.grid-title {
+    color: white;
+    text-align: center;
+    margin-top: 120px; /* adjust depending on your navbar height */
+    font-size: 28px;
+    font-weight: 600;
 }
 
 
